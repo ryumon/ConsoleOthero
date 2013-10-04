@@ -32,7 +32,9 @@ public class Board {
 
 		for(int i=0; i<64; i++) {
 
-			if(i%8==0){
+			if(i==0) {
+				System.out.print("1");
+			}else if(i%8==0){
 				System.out.println();
 				//”Õ‚Ì—ñ”Ô†•\Ž¦
 				System.out.print(i/7+1);
@@ -47,16 +49,20 @@ public class Board {
 			}
 
 		}
+
+		System.out.println();
+
+		System.out.println("“ü—Í‚µ‚Ä‚­‚¾‚³‚¢(x,y)„");
 	}
-	
+
 	public void method(boolean player1, int x, int y) {
-		
+
 		if(player1) {
 			coma[(y-1)*8+x-1] = 1;
 		}else {
 			coma[(y-1)*8+x-1] = 2;
 		}
-		
-		
+
+
 	}
 }
