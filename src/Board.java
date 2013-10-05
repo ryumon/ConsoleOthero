@@ -1,34 +1,30 @@
 
 public class Board {
 
-	//ƒRƒ}¶¬
-	int[] coma = new int[64];
+	//ãƒã‚¹ç”Ÿæˆ
+	int[] masu = new int[64];
 
 
 	/**
-	 * ”Õ‚Ì‘S‚Ä‚Ìƒ}ƒX‚ğ0‚Å‰Šú‰»ŒãA‰Šú”z’u‚Ì‚S‚Â‚ÌƒRƒ}‚ğ‚Â‚­‚é
+	 * ç›¤ã®å…¨ã¦ã®ãƒã‚¹ã‚’0ã§åˆæœŸåŒ–å¾Œã€åˆæœŸé…ç½®ã®ï¼”ã¤ã®ã‚³ãƒã‚’ã¤ãã‚‹
 	 */
 	public void makeBoard() {
 		for(int i=0; i<64; i++) {
-			coma[i] = 0;
+			masu[i] = 0;
 		}
-		//Å‰‚É’u‚©‚ê‚Ä‚¢‚éƒRƒ}
-		coma[27] = 1;
-		coma[36] = 1;
-		coma[28] = 2;
-		coma[35] = 2;
+		//æœ€åˆã«ç½®ã‹ã‚Œã¦ã„ã‚‹ã‚³ãƒ
+		masu[27] = 1;
+		masu[36] = 1;
+		masu[28] = 2;
+		masu[35] = 2;
 	}
 
 	/**
-	 * ”Õ‚ğ•\¦‚·‚é
+	 * ç›¤ã‚’è¡¨ç¤ºã™ã‚‹
 	 */
 	public void show(){
-		//”Õ‚Ìs”Ô†•\¦
-		System.out.println("@1 2 3 4 5 6 7 8");
-
-
-
-
+		//ç›¤ã®è¡Œç•ªå·è¡¨ç¤º
+		System.out.println("ã€€1 2 3 4 5 6 7 8");
 
 		for(int i=0; i<64; i++) {
 
@@ -36,43 +32,116 @@ public class Board {
 				System.out.print("1");
 			}else if(i%8==0){
 				System.out.println();
-				//”Õ‚Ì—ñ”Ô†•\¦
+				//ç›¤ã®åˆ—ç•ªå·è¡¨ç¤º
 				System.out.print(i/7+1);
 			}
 
-			if(coma[i]==0) {
+			if(masu[i]==0) {
 				System.out.print(" #");	
-			}else if(coma[i]==1) {
-				System.out.print(" œ");
+			}else if(masu[i]==1) {
+				System.out.print(" â—");
 			}else {
-				System.out.print(" ›");
+				System.out.print(" â—‹");
 			}
 
 		}
 
 		System.out.println();
 
-		System.out.println("“ü—Í‚µ‚Ä‚­‚¾‚³‚¢(x,y)„");
+		System.out.println("å…¥åŠ›ã—ã¦ãã ã•ã„(x,y)ï¼");
 	}
 
 	public void method(boolean player1, int x, int y) {
 
 		if(player1) {
-			coma[(y-1)*8+x-1] = 1;
+			masu[(y-1)*8+x-1] = 1;
 		}else {
-			coma[(y-1)*8+x-1] = 2;
+			masu[(y-1)*8+x-1] = 2;
 		}
 
 	}
 
 	/**
-	 * ƒRƒ}‚ª’u‚¯‚éêŠ‚©”»’è‚·‚é
+	 * ã‚³ãƒãŒç½®ã‘ã‚‹å ´æ‰€ã‹åˆ¤å®šã™ã‚‹
 	 */
 	public boolean check(int x, int y) {
-		//w’è‚³‚ê‚½ƒ}ƒX
+		//æŒ‡å®šã•ã‚ŒãŸãƒã‚¹
 		int assign = (y-1)*8+x-1;
-		//w’è‚³‚ê‚½ƒ}ƒX‚Ì¶—×‚Ìƒ}ƒX‚©‚çŒv‰ñ‚è‚É
-		if(coma[assign-1] != 0 || coma[assign-9] !=0 || coma[assign-8] != 0 || coma[assign-7] != 0 || coma[assign+1] != 0 || coma[assign+9] != 0 || coma[assign+8] != 0 || coma[assign+7] != 0) {
+		
+		//æ—¢ã«ã‚³ãƒãŒç½®ã„ã¦ã‚ã£ãŸå ´åˆ
+		if(masu[assign] != 0) {
+			return false;
+		}
+		
+		//å››éš…ã®åˆ¤å®š
+		if(assign==0) {
+			if(masu[1] != 0 || masu[9] != 0 || masu[8] != 0) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		
+		if(assign==7) {
+			if(masu[6] != 0 || masu[15] != 0 || masu[14] != 0) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		
+		if(assign==56) {
+			if(masu[48] != 0 || masu[49] != 0 || masu[57] != 0) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		
+		if(assign==63) {
+			if(masu[62] != 0 || masu[54] !=0 || masu[55] != 0) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		//ä¸Šè¾ºã®ãƒã‚§ãƒƒã‚¯(ç«¯ï¼’ã¤ã¯é™¤å¤–)masu[1]~masu[6]ã«ã¤ã„ã¦â†â†™â†“â†˜â†’ã®ãƒã‚¹ã‚’ç¢ºèª
+		if(1<=assign && assign<=6) {
+			if(masu[assign-1] != 0 || masu[assign+1] != 0 || masu[assign+9] != 0 || masu[assign+8] != 0 || masu[assign+7] != 0) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		//ä¸‹è¾ºã®ãƒã‚§ãƒƒã‚¯(ç«¯ï¼’ã¤ã¯é™¤å¤–)masu[57]~masu[62]ã«ã¤ã„ã¦â†â†–â†‘â†—â†’ã®ãƒã‚¹ã‚’ç¢ºèª
+		if(57<=assign && assign<=62) {
+			if(masu[assign-1] != 0 || masu[assign-9] !=0 || masu[assign-8] != 0 || masu[assign-7] != 0 || masu[assign+1] != 0) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		
+		//å¤–å´è¾ºã®ãƒã‚§ãƒƒã‚¯
+		//å·¦è¾ºã‹ã‚‰
+		if(assign % 8 == 0) {
+			if(masu[assign-8] != 0 || masu[assign-7] != 0 || masu[assign+1] != 0 || masu[assign+9] != 0 || masu[assign+8] != 0) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		//å³è¾º
+		if((assign + 1) % 8 == 0) {
+			if(masu[assign-1] != 0 || masu[assign-9] !=0 || masu[assign-8] != 0 || masu[assign+8] != 0 || masu[assign+7] != 0) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+		
+		//æŒ‡å®šã•ã‚ŒãŸãƒã‚¹ã®å·¦éš£ã®ãƒã‚¹ã‹ã‚‰æ™‚è¨ˆå›ã‚Šã«
+		if(masu[assign-1] != 0 || masu[assign-9] !=0 || masu[assign-8] != 0 || masu[assign-7] != 0 || masu[assign+1] != 0 || masu[assign+9] != 0 || masu[assign+8] != 0 || masu[assign+7] != 0) {
 			return true;
 		}else {
 			return false;
