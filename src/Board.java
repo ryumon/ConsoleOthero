@@ -63,6 +63,20 @@ public class Board {
 			coma[(y-1)*8+x-1] = 2;
 		}
 
+	}
+
+	/**
+	 * コマが置ける場所か判定する
+	 */
+	public boolean check(int x, int y) {
+		//指定されたマス
+		int assign = (y-1)*8+x-1;
+		//指定されたマスの左隣のマスから時計回りに
+		if(coma[assign-1] != 0 || coma[assign-9] !=0 || coma[assign-8] != 0 || coma[assign-7] != 0 || coma[assign+1] != 0 || coma[assign+9] != 0 || coma[assign+8] != 0 || coma[assign+7] != 0) {
+			return true;
+		}else {
+			return false;
+		}
 
 	}
 }
