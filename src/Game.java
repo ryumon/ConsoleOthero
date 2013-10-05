@@ -27,9 +27,9 @@ public class Game {
 			int y = input % 10;
 
 			//入力を受けてそこにコマが置けるかどうかを判定するメソッド
-			boolean isOK = board.check(x,y);
+			boolean isOK = board.check(player1, x,y);
 			if(isOK==false) {
-				System.out.print("コマが置けません。やり直してください。");
+				System.out.println("コマが置けません。やり直してください。");
 				continue;
 			}
 
