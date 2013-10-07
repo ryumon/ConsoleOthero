@@ -30,7 +30,11 @@ public class Board {
 
 			if(i==0) {
 				System.out.print("1");
-			}else if(i%8==0){
+			}else if(i==56) {
+				System.out.println();
+				System.out.print("8");
+			}
+			else if(i%8==0){
 				System.out.println();
 				//盤の列番号表示
 				System.out.print(i/7+1);
@@ -261,42 +265,42 @@ public class Board {
 		if(masu[assign-1] == a) {
 			checkAndFlipLine1(player1,x,y);
 			direct = 1;
-			
+
 		}
 		if(masu[assign-9] == a) {
 			checkAndFlipLine2(player1,x,y);
 			direct = 2;
-			
+
 		}
 		if(masu[assign-8] == a) {
 			checkAndFlipLine3(player1,x,y);
 			direct = 3;
-			
+
 		}
 		if(masu[assign-7] == a) {
 			checkAndFlipLine4(player1,x,y);
 			direct = 4;
-			
+
 		}
 		if(masu[assign+1] == a) {
 			checkAndFlipLine5(player1,x,y);
 			direct = 5;
-			
+
 		}
 		if(masu[assign+9] == a) {
 			checkAndFlipLine6(player1,x,y);
 			direct = 6;
-			
+
 		}
 		if(masu[assign+8] == a) {
 			checkAndFlipLine7(player1,x,y);
 			direct = 7;
-			
+
 		}
 		if(masu[assign+7] == a) {
 			checkAndFlipLine8(player1,x,y);
 			direct = 8;
-			
+
 		}
 
 		return direct;
@@ -455,7 +459,7 @@ public class Board {
 			}
 		}
 	}
-	
+
 	public void checkAndFlipLine6(boolean player1, int x, int y) {
 
 		//指定されたマス
@@ -520,7 +524,7 @@ public class Board {
 			}
 		}
 	}
-	
+
 	public void checkAndFlipLine8(boolean player1, int x, int y) {
 
 		//指定されたマス
