@@ -333,8 +333,8 @@ public class Board {
 		}
 
 		for(int i=1; i<=6; i++) {
-			//端まで探索したらやめる
-			if((0 <= assign+d+d*i && assign+d+d*i<= 7) || (56 <= assign+d+d*i && assign+d+d*i<= 63) || (assign+d+d*i) % 8 == 0 || (assign+d+d*i+1) % 8 == 0) {
+			//端まで探索したらやめる。。。要テスト
+			if((0 <= assign+d && assign+d<= 7) || (56 <= assign+d && assign+d<= 63) || (assign+d) % 8 == 0 || (assign+d+1) % 8 == 0) {
 				break;
 			}
 			
@@ -350,6 +350,10 @@ public class Board {
 				for(int j=1; j<=i; j++) {
 					masu[assign+d+d*i-d*j]=b;
 				}
+			}
+			
+			if((0 <= assign+d+d*i && assign+d+d*i<= 7) || (56 <= assign+d+d*i && assign+d+d*i<= 63) || (assign+d+d*i) % 8 == 0 || (assign+d+d*i+1) % 8 == 0) {
+				break;
 			}
 		}
 	}
