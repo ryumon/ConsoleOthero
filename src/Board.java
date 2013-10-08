@@ -94,16 +94,16 @@ public class Board {
 		if(assign==0) {
 			if(masu[1] == a) {
 				direct = 5;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 
 			if(masu[9] == a) {
 				direct = 6;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[8] == a) {
 				direct = 7;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			return direct;
 		}
@@ -111,17 +111,17 @@ public class Board {
 		if(assign==7) {
 			if(masu[6] == a) {
 				direct = 1;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 
 			if(masu[15] == a) {
 				direct = 7;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 
 			if(masu[14] == a) {
 				direct = 8;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			return direct;
 		}
@@ -129,16 +129,16 @@ public class Board {
 		if(assign==56) {
 			if(masu[48] == a) {
 				direct = 3;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[49] == a) {
 				direct = 4;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 
 			if(masu[57] == a) {
 				direct = 5;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			return direct;
 		}
@@ -146,15 +146,15 @@ public class Board {
 		if(assign==63) {
 			if(masu[62] == a) {
 				direct = 1;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[54] == a) {
 				direct = 2;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[55] == a) {
 				direct = 3;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			return direct;
 		}
@@ -162,23 +162,23 @@ public class Board {
 		if(1<=assign && assign<=6) {
 			if(masu[assign-1] == a) {
 				direct = 1;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign+1] == a) {
 				direct = 5;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign+9] == a) {
 				direct = 6;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign+8] == a) {
 				direct = 7;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign+7] == a) {
 				direct = 8;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 
 			return direct;
@@ -187,23 +187,23 @@ public class Board {
 		if(57<=assign && assign<=62) {
 			if(masu[assign-1] == a) {
 				direct = 1;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign-9] == a) {
 				direct = 2;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign-8] == a) {
 				direct = 3;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign-7] == a) {
 				direct = 4;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign+1] == a) {
 				direct = 5;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 
 			return direct;
@@ -214,23 +214,23 @@ public class Board {
 		if(assign % 8 == 0) {
 			if(masu[assign-8] == a) {
 				direct = 3;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign-7] == a) {
 				direct = 4;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign+1] == a) {
 				direct = 5;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign+9] == a) {
 				direct = 6;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign+8] == a) {
 				direct = 7;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 
 			return direct;
@@ -239,23 +239,23 @@ public class Board {
 		if((assign + 1) % 8 == 0) {
 			if(masu[assign-1] == a) {
 				direct = 1;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign-9] == a) {
 				direct = 2;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign-8] == a) {
 				direct = 3;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign+8] == a) {
 				direct = 7;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 			if(masu[assign+7] == a) {
 				direct = 8;
-				checkAndFlipLine(player1,x,y,direct);
+				checkAndFlipLine(player1,assign,direct);
 			}
 
 			return direct;
@@ -264,67 +264,64 @@ public class Board {
 		//指定されたマスの左隣のマスから時計回りに
 		if(masu[assign-1] == a) {
 			direct = 1;
-			checkAndFlipLine(player1,x,y,direct);
+			checkAndFlipLine(player1,assign,direct);
 		}
 		if(masu[assign-9] == a) {
 			direct = 2;
-			checkAndFlipLine(player1,x,y,direct);
+			checkAndFlipLine(player1,assign,direct);
 		}
 		if(masu[assign-8] == a) {
 			direct = 3;
-			checkAndFlipLine(player1,x,y,direct);
+			checkAndFlipLine(player1,assign,direct);
 
 		}
 		if(masu[assign-7] == a) {
 			direct = 4;
-			checkAndFlipLine(player1,x,y,direct);
+			checkAndFlipLine(player1,assign,direct);
 		}
 		if(masu[assign+1] == a) {
 			direct = 5;
-			checkAndFlipLine(player1,x,y,direct);
+			checkAndFlipLine(player1,assign,direct);
 		}
 		if(masu[assign+9] == a) {
 			direct = 6;
-			checkAndFlipLine(player1,x,y,direct);
+			checkAndFlipLine(player1,assign,direct);
 		}
 		if(masu[assign+8] == a) {
 			direct = 7;
-			checkAndFlipLine(player1,x,y,direct);
+			checkAndFlipLine(player1,assign,direct);
 		}
 		if(masu[assign+7] == a) {
 			direct = 8;
-			checkAndFlipLine(player1,x,y,direct);
+			checkAndFlipLine(player1,assign,direct);
 		}
 		return direct;
 	}
 
-	public void checkAndFlipLine(boolean player1, int x, int y, int direct) {
+	public void checkAndFlipLine(boolean player1, int assign, int direct) {
 
-		//指定されたマス
-		int assign = (y-1)*8+x-1;
-		
 		//方向によって変える値
 		int d = 0;
-		
+
 		switch(direct) {
 		case 1: d = -1;
-			break;
+		break;
 		case 2: d = -9;
-			break;
+		break;
 		case 3: d = -8;
-			break;
+		break;
 		case 4: d = -7;
-			break;
+		break;
 		case 5: d = 1;
-			break;
+		break;
 		case 6: d = 9;
-			break;
+		break;
 		case 7: d = 8;
-			break;
+		break;
 		case 8: d = 7;
-			break;
+		break;
 		}
-
+		//手番によって
 		int a;
 		int b;
 		if(player1) {
@@ -336,6 +333,12 @@ public class Board {
 		}
 
 		for(int i=1; i<=6; i++) {
+			//端まで探索したらやめる
+			if((0 <= assign+d+d*i && assign+d+d*i<= 7) || (56 <= assign+d+d*i && assign+d+d*i<= 63) || (assign+d+d*i) % 8 == 0 || (assign+d+d*i+1) % 8 == 0) {
+				break;
+			}
+			
+			
 			if(masu[assign+d+d*i]==0) {
 				break;
 			}
